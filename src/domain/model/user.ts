@@ -1,11 +1,7 @@
 export class User {
-  private readonly _id: number;
+  readonly id: number;
 
   constructor(id: number) {
-    this._id = id;
-  }
-
-  get id(): number {
-    return this._id;
+    this.id = id;
   }
 }

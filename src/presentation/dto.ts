@@ -1,6 +1,6 @@
-import { User } from "../../domain/model/user";
+import { User } from "../domain/model/user";
 
-type UserDto = {
+export type UserDto = {
   id: number;
 };
 
