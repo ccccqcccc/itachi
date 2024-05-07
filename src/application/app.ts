@@ -1,10 +1,12 @@
 import { FindOneUserById } from "./usecase/findOneUserById";
-import { UserRepository } from "../domain/repository/user";
+import { UserRepositoryDatastore } from "../infrastructure/repository/user";
 
 export class App {
   readonly findOneUserById: FindOneUserById;
 
-  constructor(userRepository: UserRepository) {
+  constructor() {
+    const userRepository = new UserRepositoryDatastore();
+
     this.findOneUserById = new FindOneUserById(userRepository);
   }
 }

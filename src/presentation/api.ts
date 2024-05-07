@@ -1,14 +1,10 @@
 import { Hono } from "hono";
 
 import { App } from "../application/app";
-import { UserRepositoryDatastore } from "../infrastructure/repository/user";
 import { transformUserDto } from "./dto";
 import { validateFindOneParam } from "./validator";
 
-const userRepository = new UserRepositoryDatastore();
-
-const app = new App(userRepository);
-
+const app = new App();
 const api = new Hono();
 
 api.get("/users/:id", validateFindOneParam, (c) => {
