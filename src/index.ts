@@ -1,12 +1,14 @@
 import { Hono } from "hono";
+import { UserController } from "./presentation/controller/user";
+import { FindUserById } from "./application/findUserById";
+import { UserRepository } from "./infrastructure/repository/user";
+
+const userRepository = new UserRepository();
+const findUserById = new FindUserById(userRepository);
+const userController = new UserController(findUserById);
 
 const app = new Hono();
 
-app.get("/health", (c) => {
-  return c.text("ok");
-});
+app.get("/users/:id", (c) => userController.find(c));
 
-export default {
-  port: 3000,
-  fetch: app.fetch,
-};
+Bun.serve({ port: 3000, fetch: (req) => app.fetch(req) });
