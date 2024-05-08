@@ -1,20 +1,24 @@
 import { Hono } from "hono";
 
 import { App } from "../../app";
-import { transformUserDto } from "./transform";
-import { validateFindOneParam } from "./validator";
+import { UserController } from "./controller/user";
+import { createFactory } from "hono/factory";
 
-const app = new App();
-const api = new Hono();
+export class Api {
+  private readonly app: App;
 
-api.get("/users/:id", validateFindOneParam, (c) => {
-  const { id } = c.req.valid("param");
-  const user = app.findOneUserById.exec({ id: Number(id) });
-  if (!user) {
-    return c.notFound();
+  constructor(app: App) {
+    this.app = app;
   }
 
-  return c.json(transformUserDto(user));
-});
+  exec() {
+    const api = new Hono();
+    const factory = createFactory();
 
-export { api };
+    const userController = new UserController(this.app, factory);
+
+    api.get("/users/:id", ...userController.findOne());
+
+    Bun.serve({ port: 3000, fetch: (req) => api.fetch(req) });
+  }
+}

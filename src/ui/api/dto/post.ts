@@ -3,8 +3,3 @@ export type PostDto = {
   name: string;
   status: string;
 };
-
-export type UserDto = {
-  id: string;
-  posts: PostDto[];
-};

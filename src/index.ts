@@ -1,3 +1,7 @@
-import { api } from "./ui/api";
+import { App } from "./app";
+import { Api } from "./ui/api";
 
-Bun.serve({ port: 3000, fetch: (req) => api.fetch(req) });
+const app = new App();
+const api = new Api(app);
+
+api.exec();
