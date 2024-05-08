@@ -1,7 +1,6 @@
 import { Factory } from "hono/factory";
 import { validateFindOneParam } from "../validator/query";
 import { App } from "../../../app";
-import { transformUserDto } from "../transform/user";
 
 export class UserController {
   private readonly app: App;
@@ -15,13 +14,13 @@ export class UserController {
   findOne() {
     return this.factory.createHandlers(validateFindOneParam, (c) => {
       const { id } = c.req.valid("param");
-
       const user = this.app.findOneUserById.exec({ id: Number(id) });
+
       if (!user) {
         return c.notFound();
       }
 
-      return c.json(transformUserDto(user));
+      return c.json(user);
     });
   }
 }
