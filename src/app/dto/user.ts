@@ -1,6 +1,7 @@
+import { Dto } from "./dto";
 import { PostDto } from "./post";
 
-export type UserDto = {
+export interface UserDto extends Dto {
   id: string;
   posts: PostDto[];
-};
+}

@@ -1,7 +1,10 @@
 import { App } from "./app";
 import { Api } from "./ui/api";
+import { UserRepositoryDatastore } from "./infrastructure/repository";
 
-const app = new App();
+const userRepository = new UserRepositoryDatastore();
+
+const app = new App(userRepository);
 const api = new Api(app);
 
-api.exec();
+api.exec(3000);

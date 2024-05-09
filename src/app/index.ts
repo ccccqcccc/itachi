@@ -1,12 +1,3 @@
-import { FindOneUserById } from "./usecase/findOneUserById";
-import { UserRepositoryDatastore } from "../infrastructure/repository/user";
+import { App } from "./app";
 
-export class App {
-  readonly findOneUserById: FindOneUserById;
-
-  constructor() {
-    const userRepository = new UserRepositoryDatastore();
-
-    this.findOneUserById = new FindOneUserById(userRepository);
-  }
-}
+export { App };

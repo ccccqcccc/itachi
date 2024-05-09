@@ -1,4 +1,4 @@
-export enum PostStatus {}
+import { PostStatus } from "./postStatus";
 
 export class Post {
   readonly id?: number;

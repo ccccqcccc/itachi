@@ -1,12 +1,10 @@
 {
   "scripts": {
     "dev": "bun run --hot src/index.ts",
-    "start": "bun run src/index.ts",
     "build": "bun build src/index.ts --outdir ./build",
     "test": "bun test"
   },
   "dependencies": {
-    "@hono/zod-validator": "^0.2.1",
     "hono": "^4.2.9",
     "zod": "^3.23.6"
   },
