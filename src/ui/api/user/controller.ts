@@ -25,7 +25,7 @@ export class UserController {
   findOne() {
     return this.factory.createHandlers(this.validator.validateFindOneParam, (c) => {
       const { id } = c.req.valid("param");
-      const user = this.app.findOneUserById.exec({ id });
+      const user = this.app.findUserById.exec({ id });
 
       if (!user) {
         return c.notFound();

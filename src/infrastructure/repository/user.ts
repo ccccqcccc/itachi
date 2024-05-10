@@ -9,7 +9,7 @@ export class UserRepositoryDatastore implements UserRepository {
     return [];
   }
 
-  findById(id: number): User | null {
+  findOneById(id: number): User | null {
     return new User({ id, posts: [] });
   }
 

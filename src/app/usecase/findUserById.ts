@@ -5,7 +5,7 @@ import { Usecase } from "./usecase";
 
 type Params = { id: number };
 
-export class FindOneUserById implements Usecase<UserDto | null, Params> {
+export class FindUserById implements Usecase<UserDto | null, Params> {
   private readonly userRepository: UserRepository;
 
   constructor(userRepository: UserRepository) {
@@ -13,7 +13,7 @@ export class FindOneUserById implements Usecase<UserDto | null, Params> {
   }
 
   exec(params: Params): UserDto | null {
-    const user = this.userRepository.findById(params.id);
+    const user = this.userRepository.findOneById(params.id);
 
     if (!user) {
       return null;

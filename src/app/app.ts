@@ -1,15 +1,12 @@
-import { FindUsers, FindOneUserById } from "./usecase";
+import { FindUsers, FindUserById } from "./usecase";
 import { UserRepository } from "@domain/repository";
-import { Usecase } from "./usecase";
 
 export class App {
-  readonly [x: string]: Usecase<any, any>;
-
   readonly findUsers: FindUsers;
-  readonly findOneUserById: FindOneUserById;
+  readonly findUserById: FindUserById;
 
   constructor(userRepository: UserRepository) {
     this.findUsers = new FindUsers(userRepository);
-    this.findOneUserById = new FindOneUserById(userRepository);
+    this.findUserById = new FindUserById(userRepository);
   }
 }
