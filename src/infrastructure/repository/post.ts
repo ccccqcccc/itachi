@@ -1,5 +1,5 @@
-import { Post } from "../../domain/model";
-import { PostRepository } from "../../domain/repository";
+import { Post } from "@domain/model";
+import { PostRepository } from "@domain/repository";
 
 // TODO
 export class PostRepositoryDatastore implements PostRepository {

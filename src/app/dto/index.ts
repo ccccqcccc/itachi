@@ -1,4 +1,5 @@
+import { Dto } from "./dto";
 import { PostDto } from "./post";
 import { UserDto } from "./user";
 
-export { PostDto, UserDto };
+export { Dto, PostDto, UserDto };

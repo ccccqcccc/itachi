@@ -1,9 +1,7 @@
 {
-  "scripts": {
-    "dev": "bun run --hot src/index.ts",
-    "build": "bun build src/index.ts --outdir ./build",
-    "test": "bun test"
-  },
+  "name": "itachi",
+  "version": "0.0.1",
+  "author": "ccccqcccc",
   "dependencies": {
     "hono": "^4.2.9",
     "zod": "^3.23.6"

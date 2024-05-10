@@ -1,4 +1,5 @@
+import { Usecase } from "./usecase";
 import { FindUsers } from "./findUsers";
 import { FindOneUserById } from "./findOneUserById";
 
-export { FindUsers, FindOneUserById };
+export { Usecase, FindUsers, FindOneUserById };

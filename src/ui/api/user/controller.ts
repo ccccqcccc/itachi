@@ -1,6 +1,6 @@
 import { Factory } from "hono/factory";
 
-import { App } from "../../../app";
+import { App } from "@app";
 import { UserValidator } from "./validator";
 
 export class UserController {

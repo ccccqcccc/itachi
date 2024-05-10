@@ -1,13 +1,23 @@
-To install dependencies:
+# itachi
+
+## usage
+
+### install
 
 ```sh
 bun install
 ```
 
-To run:
+### test
 
 ```sh
-bun run dev
+bun test
+```
+
+### run
+
+```sh
+docker compose up --build
 ```
 
 open http://localhost:3000

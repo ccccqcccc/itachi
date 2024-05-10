@@ -1,4 +1,4 @@
-import { UserRepository } from "../../domain/repository";
+import { UserRepository } from "@domain/repository";
 import { UserDto } from "../dto";
 import { transformUserDto } from "../transform";
 import { Usecase } from "./usecase";
