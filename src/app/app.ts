@@ -1,12 +1,19 @@
-import { FindUsers, FindUserById } from "./usecase";
+import { FindUsers, FindUserById, Usecase } from "./usecase";
 import { UserRepository } from "@domain/repository";
+import { TransactionService } from "@domain/service";
 
-export class App {
+abstract class AbstractApp {
+  readonly [k: string]: Usecase<any, any>;
+}
+
+export class App extends AbstractApp {
   readonly findUsers: FindUsers;
   readonly findUserById: FindUserById;
 
-  constructor(userRepository: UserRepository) {
-    this.findUsers = new FindUsers(userRepository);
-    this.findUserById = new FindUserById(userRepository);
+  constructor(userRepository: UserRepository, transactionService: TransactionService) {
+    super();
+
+    this.findUsers = new FindUsers(userRepository, transactionService);
+    this.findUserById = new FindUserById(userRepository, transactionService);
   }
 }

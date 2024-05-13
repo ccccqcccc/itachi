@@ -1,7 +1,7 @@
 import { Post } from "./post";
 
 export class User {
-  readonly id: number | undefined;
+  readonly id?: number;
   readonly posts: Post[];
 
   constructor(params: { id?: number; posts: Post[] }) {

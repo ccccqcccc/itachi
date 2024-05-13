@@ -1,23 +1,23 @@
-import { User } from "@domain/model";
+import { Tx, User } from "@domain/model";
 import { UserRepository } from "@domain/repository";
 
 // TODO
 export class UserRepositoryDatastore implements UserRepository {
   constructor() {}
 
-  find(limit?: number, offset?: number, from?: Date, to?: Date): User[] {
+  find(params: { tx: Tx; limit?: number; offset?: number; from?: Date; to?: Date }): User[] {
     return [];
   }
 
-  findOneById(id: number): User | null {
-    return new User({ id, posts: [] });
+  findOneById(params: { tx: Tx; id: number }): User | null {
+    return new User({ id: params.id, posts: [] });
   }
 
-  create(user: User): User {
-    return user;
+  create(params: { tx: Tx; user: User }): User {
+    return params.user;
   }
 
-  update(user: User): User {
-    return user;
+  update(params: { tx: Tx; user: User }): User {
+    return params.user;
   }
 }

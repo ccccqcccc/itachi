@@ -1,7 +1,7 @@
 import { PostStatus } from "./postStatus";
 
 export class Post {
-  readonly id: number | undefined;
+  readonly id?: number;
   readonly name: string;
   readonly status: PostStatus;
 

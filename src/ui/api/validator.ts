@@ -3,9 +3,6 @@ import { validator } from "hono/validator";
 
 type Target = "param" | "query" | "json" | "header";
 
-export const integer = z.coerce.number().int().min(0);
-export const datetime = z.string().datetime({ offset: false });
-
 export class Validator {
   validateQuery(schema: z.ZodType) {
     return this.validate("query", schema);
