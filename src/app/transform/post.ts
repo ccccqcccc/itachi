@@ -1,4 +1,4 @@
-import { Post } from "@domain/model";
+import { Post } from "@domain";
 import { PostDto } from "../dto";
 import { transformId } from "./id";
 

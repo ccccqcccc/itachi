@@ -4,11 +4,8 @@
     "paths": {
       "@ui": ["./src/ui"],
       "@app": ["./src/app"],
-      "@domain/model": ["./src/domain/model"],
-      "@domain/repository": ["./src/domain/repository"],
-      "@domain/service": ["./src/domain/service"],
-      "@infrastructure/repository": ["./src/infrastructure/repository"],
-      "@infrastructure/service": ["./src/infrastructure/service"]
+      "@domain": ["./src/domain"],
+      "@infrastructure": ["./src/infrastructure"]
     }
   }
 }

@@ -1,5 +1,4 @@
-import { Tx, User } from "@domain/model";
-import { UserRepository } from "@domain/repository";
+import { Tx, User, UserRepository } from "@domain";
 
 // TODO
 export class UserRepositoryDatastore implements UserRepository {

@@ -1,9 +1,7 @@
-import { UserRepository } from "@domain/repository";
+import { Tx, TransactionService, UserRepository } from "@domain";
 import { UserDto } from "../dto";
 import { transformUserDto } from "../transform";
 import { Usecase } from "./usecase";
-import { TransactionService } from "@domain/service";
-import { Tx } from "@domain/model";
 
 type Params = { limit?: number; offset?: number; from?: Date; to?: Date };
 

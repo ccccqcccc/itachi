@@ -1,5 +1,4 @@
-import { TransactionService } from "@domain/service";
-import { Tx } from "@domain/model";
+import { Tx, TransactionService } from "@domain";
 
 // TODO
 export class TransactionServiceDatastore implements TransactionService {

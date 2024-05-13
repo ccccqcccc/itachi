@@ -1,9 +1,7 @@
-import { UserRepository } from "@domain/repository";
+import { Tx, TransactionService, UserRepository } from "@domain";
 import { UserDto } from "../dto";
 import { transformUserDto } from "../transform";
 import { Usecase } from "./usecase";
-import { TransactionService } from "@domain/service";
-import { Tx, User } from "@domain/model";
 
 type Params = { id: number };
 
