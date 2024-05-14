@@ -1,4 +1,4 @@
-import { Post, Tx, PostRepository } from "@domain";
+import { Post, Tx, PostRepository } from "../../domain";
 
 // TODO
 export class PostRepositoryDatastore implements PostRepository {

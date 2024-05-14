@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import { createFactory } from "hono/factory";
 
-import { App } from "@app";
+import { App } from "../../app";
 import { UserController } from "./user";
 import { Ui } from "../ui";
 

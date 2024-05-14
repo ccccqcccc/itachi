@@ -1,4 +1,4 @@
-import { Tx, TransactionService, UserRepository } from "@domain";
+import { Tx, TransactionService, UserRepository } from "../../domain";
 import { UserDto } from "../dto";
 import { transformUserDto } from "../transform";
 import { Usecase } from "./usecase";

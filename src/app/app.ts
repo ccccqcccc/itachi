@@ -1,5 +1,5 @@
 import { FindUsers, FindUserById } from "./usecase";
-import { UserRepository, TransactionService } from "@domain";
+import { UserRepository, TransactionService } from "../domain";
 
 export class App {
   readonly findUsers: FindUsers;

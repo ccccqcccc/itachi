@@ -1,4 +1,4 @@
-import { Tx, User, UserRepository } from "@domain";
+import { Tx, User, UserRepository } from "../../domain";
 
 // TODO
 export class UserRepositoryDatastore implements UserRepository {

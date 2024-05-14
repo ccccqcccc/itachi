@@ -1,4 +1,4 @@
-import { User } from "@domain";
+import { User } from "../../domain";
 import { UserDto } from "../dto";
 import { transformId } from "./id";
 import { transformPostDto } from "./post";

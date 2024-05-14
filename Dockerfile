@@ -6,13 +6,12 @@ COPY package.json ./
 COPY bun.lockb ./
 COPY src ./
 
-RUN bun install
-RUN bun build --compile --target=bun-linux-x64 src/index.ts --outfile app
+RUN bun install && bun build --compile --minify index.ts --outfile itachi
 
 FROM gcr.io/distroless/base-debian12:latest
 
 WORKDIR /
 
-COPY --from=builder /build/app /app
+COPY --from=builder /build/itachi /itachi
 
-ENTRYPOINT ["/app"]
+ENTRYPOINT ["/itachi"]

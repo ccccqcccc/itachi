@@ -1,11 +1,5 @@
 {
   "compilerOptions": {
-    "strict": true,
-    "paths": {
-      "@ui": ["./src/ui"],
-      "@app": ["./src/app"],
-      "@domain": ["./src/domain"],
-      "@infrastructure": ["./src/infrastructure"]
-    }
+    "strict": true
   }
 }
